@@ -8,17 +8,17 @@ window.addEventListener('DOMContentLoaded', (event) => {
             return;
         }
         try{
-            (new EmployeePayrollData()).name = name.value;;
+            (new EmployeePayrollData()).name = name.value;
             textError.textContent = "";
         } catch(e){
             textError.textContent = e;
         }
     });
-});
 
-const salary = document.querySelector('#salary');
-const output = document.querySelector('.salary-output');
-output.textContent = salary.value;
-salary.addEventListener('input', function(){
+    const salary = document.querySelector('#salary');
+    const output = document.querySelector('.salary-output');
     output.textContent = salary.value;
+    salary.addEventListener('input', function(){
+        output.textContent = salary.value;
+    });
 });
